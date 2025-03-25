@@ -1,0 +1,8 @@
+#include <iostream> //importa a biblioteca de entrada e saída
+
+using namespace std; //nome padrão para as funções (deixar de usar std::)
+
+int main(){ //função principal
+    cout << "Hello, World!" << endl;
+    return 0;
+}
