@@ -9,6 +9,7 @@ int main(){
 	float p;
 	p = float(a+b+c)/2; 
 	//a divisão de um inteiro por um inteiro será um inteiro
+	//se o denominador for menor que o numerador, a divisão de inteiros será 0
 	cout << p;
 
 }
