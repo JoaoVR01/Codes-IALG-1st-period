@@ -1,40 +1,40 @@
 #include <iostream>
-#include <iomanip>
+#include <cmath>
 
 using namespace std;
 
 int main(){
-	int carga,cavalo,vaca,galinha,total,novo=0;
-	
-	/*
-	Cavalo 	250
-	Vaca 	150
-	Galinha 2 
-	*/
-	
-	cin>>carga>>cavalo>>vaca>>galinha;
-	
-	total = cavalo*250 + vaca*150 + galinha*2;
-	
-	if(total > carga){
-		if(cavalo*250<= carga){
-			novo+=cavalo;
-			if(novo + vaca*150 <= carga){
-				novo+=vaca;
-				if(novo+galinha*2 <= carga){
-					novo+=galinha;
-				}else{
-					galinha = (novo - vaca*150 - cavalo*250)/2;
-				}
-			}else{
-				vaca = (novo - cavalo*250 - galinha*2)/150;
-			}
-		}else{
-			cavalo = (novo - galinha*2 - vaca*150)/250;
-		}
-		cout<<endl<<cavalo<<endl<<vaca<<endl<<galinha<<endl;
-	}
-	return 0;
+    int carga, cavalo, vaca, galinha;
+    cin >> carga >> cavalo >> vaca >> galinha;
+
+    float p_galinha = galinha*2;
+    float p_vaca = vaca*150;
+    float p_cavalo = cavalo*250;
+
+    if(p_galinha >= carga){
+        galinha = ((p_galinha - carga)/2);
+        carga = carga - p_galinha;
+    }else{
+        galinha = 0;
+        carga = carga - p_galinha;
+    }
+
+    if(p_vaca >= carga){
+            vaca = ((p_vaca - carga)/150);
+            carga = carga - p_vaca;
+        }else{
+            vaca = 0;
+            carga = carga - p_vaca;
+        }
+
+    if(p_cavalo >= carga){
+        cavalo = ((p_cavalo - carga)/250);
+    }else{
+        cavalo = 0;
+    }
+    cout<<endl<<cavalo<<endl<<vaca<<endl<<galinha<<endl;
+
+    return 0;
 }
 
 
