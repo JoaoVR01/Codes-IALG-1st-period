@@ -1,43 +1,3 @@
-#include <iostream>
-#include <cmath>
-
-using namespace std;
-
-int main(){
-    int carga, cavalo, vaca, galinha;
-    cin >> carga >> cavalo >> vaca >> galinha;
-
-    float p_galinha = galinha*2;
-    float p_vaca = vaca*150;
-    float p_cavalo = cavalo*250;
-
-    if(p_galinha >= carga){
-        galinha = ((p_galinha - carga)/2);
-        carga = carga - p_galinha;
-    }else{
-        galinha = 0;
-        carga = carga - p_galinha;
-    }
-
-    if(p_vaca >= carga){
-            vaca = ((p_vaca - carga)/150);
-            carga = carga - p_vaca;
-        }else{
-            vaca = 0;
-            carga = carga - p_vaca;
-        }
-
-    if(p_cavalo >= carga){
-        cavalo = ((p_cavalo - carga)/250);
-    }else{
-        cavalo = 0;
-    }
-    cout<<endl<<cavalo<<endl<<vaca<<endl<<galinha<<endl;
-
-    return 0;
-}
-
-
 Pedro Álvares Cabral precisa organizar as caravelas para carregarem os cavalos, as vacas e as galinhas necessárias para a viagem para as Índias.
 
 A caravela possui um limite de carga e você deverá calcular a quantidade máxima de cada tipo de animal que a caravela poderá carregar. Lembre-se que Cabral possui uma quantidade limitada de cada tipo de animal, além disso, ele também informou qual o tipo de animal que é prioritário e que tipo de informação ele precisa para poder finalizar sua tarefa.
@@ -63,3 +23,46 @@ Entradas:
 Saída:
 
     Quantidade de animais que NÃO podem ser incluídos numa caravela na seguinte ordem: Cavalos, Vacas e Galinhas.
+
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main(){
+	int carga_max, cavalo, vaca, galinha;
+	cin >> carga_max >> cavalo >> vaca >> galinha;
+	
+	int peso_cavalo = cavalo*250;
+	int peso_vaca = vaca*150;
+	int peso_galinha = galinha*2;
+	
+	//analise das galinhas
+	carga_max -= peso_galinha;
+	if(carga_max >= 0){
+		galinha -= (peso_galinha/2);
+	}else{
+		galinha = (abs(carga_max/2));
+	}
+	
+	//analise das vacas
+	carga_max -= peso_vaca;
+	if(carga_max >= 0){
+		vaca -= (peso_vaca/150);
+	}else{
+		vaca = (abs(carga_max/150));
+	}
+	
+	//analise de cavalos
+	if(carga_max >= peso_cavalo){
+		cavalo -= (peso_cavalo/250);
+	}else{
+		cavalo = (abs(carga_max/250));
+	}
+	
+	cout<<endl<<cavalo<<endl<<vaca<<endl<<galinha;
+	
+	return 0;
+}
+
