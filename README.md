@@ -25,5 +25,7 @@ Este repositório é uma forma de registrar meu aprendizado e progresso na disci
 ├── 📄 README.md          # Arquivo explicativo
 ├── 📂 Semana02/           # Códigos e exercícios da Semana 02
 ├── 📂 Semana03/           # Códigos e exercícios da Semana 03
-├── 📂 Exercicios/        # Exercícios resolvidos
+...
+├── 📂 Semana15/           # Códigos e exercícios da Semana 15
+├── 📂 Exemplos/        # Exercícios resolvidos
 └── 📂 Projetos/          # Pequenos projetos e desafios
