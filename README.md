@@ -23,7 +23,7 @@ Este repositório é uma forma de registrar meu aprendizado e progresso na disci
 ```bash
 📂 Introducao-a-Algoritmos/
 ├── 📄 README.md          # Arquivo explicativo
-├── 📂 Aula_01/           # Códigos e exercícios da Aula 01
-├── 📂 Aula_02/           # Códigos e exercícios da Aula 02
+├── 📂 Semana02/           # Códigos e exercícios da Semana 02
+├── 📂 Semana03/           # Códigos e exercícios da Semana 03
 ├── 📂 Exercicios/        # Exercícios resolvidos
 └── 📂 Projetos/          # Pequenos projetos e desafios
